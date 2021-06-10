@@ -24,15 +24,14 @@ def main_page():
 
 @app.route('/prediction/<filename>')
 def prediction(filename):
-    # Step 1
-    my_image = plt.imread(os.path.join('uploads', filename))
-    # Step 2
+
+    file_path = os.path.join('uploads', filename)
+
+    my_image = plt.imread(file_path)
     my_image_re = resize(my_image, (256, 256, 3))
 
-    # Step 3
     probabilities = model.predict(np.array([my_image_re, ]))[0, :]
-    print(probabilities)
-    # Step 4
+
     number_to_class = ['bees', 'wasp', 'other insects', 'other']
     index = np.argsort(probabilities)
     predictions = {
@@ -45,7 +44,8 @@ def prediction(filename):
         "prob3": probabilities[index[1]],
         "prob4": probabilities[index[0]],
     }
-    # Step 5
+
+    os.remove(file_path)
     return render_template('predict.html', predictions=predictions)
 
 
