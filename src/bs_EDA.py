@@ -1,5 +1,5 @@
 # USAGE
-# python bs_label_generator.py --csv bs_label.csv
+# python bs_EDA.py --csv bs_label.csv
 
 # import the necessary packages
 import os

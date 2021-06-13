@@ -13,7 +13,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-d", "--dataset", type=str,
                 default="../dataset", help="path to the dataset")
 ap.add_argument("-c", "--csv", type=str,
-                default="./", help="path to save csv")
+                default="../bs_labels.csv", help="path to save csv")
 args = vars(ap.parse_args())
 
 # Import images path
@@ -57,4 +57,4 @@ print("\nSubsets count:")
 print(df_f.value_counts('subset'))
 
 # Export CSV
-df_f.to_csv(os.path.join(args["csv"], 'bs_labels.csv'), index=False)
+df_f.to_csv(args["csv"], index=False)
