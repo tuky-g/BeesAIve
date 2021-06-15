@@ -1,0 +1,1 @@
+This folder is going to be used to extract the images from the app
