@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+   <title>BeesAIve</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style>
+      body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+      .w3-row-padding img {margin-bottom: 12px}
+      .bgimg {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url({{url_for('static', filename='photos/bee_icon.jpg')}});
+      min-height: 100%;
+      }
+   </style>
+   <body>
+      <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+         <div class="bgimg"></div>
+      </nav>
+      <!-- Page Content -->
+      <div class="w3-main w3-padding-64" style="margin-left:40%">
+         <!-- Header -->
+         <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+            <img class="w3-image" src="{{url_for('static', filename='photos/bee_title.png')}}" style="width:70%" >
+            <p>Saturdays AI project</p>
+         </header>
+         <!-- About Section -->
+         <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+            <h2>About BeesAIve</h2>
+            <hr class="w3-opacity">
+            <p>BeesAIve Project comes for love for nature and wants to focus in the importance of bees in the environment and in the human survival.</p>
+            <p>Using machine and deep learning techniques, after pre-processing more the 12000 images of bees, wasp, other insects and other things, we have been able to
+               predict what a given picture is with more than the 90% of accuracy
+            </p>
+            <p>The final goal of this project is to create an alert system that warns the beekeeper of foreign species approaching the honeycomb</p>
+            <p>BeesAIve has been developing in the context of Saturdays AI program whose objective is to spread and teach artificial intelligence in all fields.
+            </p>
+            <h3 class="w3-padding-16">Some Data</h3>
+            <p class="w3-wide">Accuracy</p>
+            <div class="w3-light-grey">
+               <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:93%">93%</div>
+            </div>
+            <p class="w3-wide">Wasp recall</p>
+            <div class="w3-light-grey">
+               <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:91%">91%</div>
+            </div>
+            <p class="w3-wide">Other insect recall</p>
+            <div class="w3-light-grey">
+               <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:88%">88%</div>
+            </div>
+            <br>
+            <div class="w3-row w3-center w3-dark-grey w3-padding-16 w3-section">
+               <div class="w3-quarter w3-section">
+                  <span class="w3-xlarge">4</span><br>
+                  Categories
+               </div>
+               <div class="w3-quarter w3-section">
+                  <span class="w3-xlarge">12000+</span><br>
+                  Pictures
+               </div>
+               <div class="w3-quarter w3-section">
+                  <span class="w3-xlarge">5</span><br>
+                  Pre-processing techniques
+               </div>
+               <div class="w3-quarter w3-section">
+                  <span class="w3-xlarge">6+</span><br>
+                  Models
+               </div>
+            </div>
+         </div>
+         <!-- Demo Section -->
+         <div class="w3-padding-32 w3-content w3-text-grey" id="demo" style="margin-bottom:64px">
+            <h2>Do you want to try?</h2>
+            <hr class="w3-opacity">
+            <p>Some text about how to use the app.
+            </p>
+            <form method=post enctype=multipart/form-data>
+               <p><input class=" w3-padding-16" type="file" name="file"></p>
+               <button class="w3-button w3-light-grey w3-padding-large" type="submit" >
+               <i class="fa fa-paper-plane"></i> SEND IMAGE
+               </button>
+            </form>
+         </div>
+         <!-- Team-->
+         <div class="w3-padding-64 w3-content w3-text-grey" id="team" style="margin-bottom:150px">
+            <h2>Members of the team</h2>
+            <hr class="w3-opacity">
+            <div class="w3-quarter w3-container w3-margin-bottom w3-center">
+               <a href="https://www.linkedin.com/in/tegarce/"><img class="w3-hover-opacity  w3-circle" src="{{url_for('static', filename='photos/Avatar_Teresa.jpeg')}}" style="width:80%" ></a>
+               <div class="w3-container w3-white">
+                  <p><b>Teresa García</b></p>
+               </div>
+            </div>
+            <div class="w3-quarter w3-container w3-margin-bottom w3-center">
+               <a href="https://www.linkedin.com/in/martagonzalezarias/"><img class="w3-hover-opacity  w3-circle" src="{{url_for('static', filename='photos/Avatar_Marta.jpeg')}}" style="width:80%" ></a>
+               <div class="w3-container w3-white">
+                  <p><b>Marta González</b></p>
+               </div>
+            </div>
+            <div class="w3-quarter w3-container w3-margin-bottom w3-center">
+               <a href="https://www.linkedin.com/in/aitorfarragutdejuan/"><img class="w3-hover-opacity  w3-circle" src="{{url_for('static', filename='photos/Avatar_Aitor.jpeg')}}" style="width:80%" ></a>
+               <div class="w3-container w3-white">
+                  <p><b>Aitor Farragut</b></p>
+               </div>
+            </div>
+            <div class="w3-quarter w3-container w3-margin-bottom w3-center">
+               <a href="https://www.linkedin.com/in/anajv/"><img class="w3-hover-opacity  w3-circle" src="{{url_for('static', filename='photos/Avatar_Ana.jpeg')}}" style="width:80%" ></a>
+               <div class="w3-container w3-white">
+                  <p><b>Ana Jiménez</b></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <footer class="w3-container w3-padding-48 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-left:40%" >
+         <i class="fa fa-medium w3-hover-opacity"></i>
+         <a href="https://github.com/tuky-g/BeesAIve/"><i class="fa fa-github w3-hover-opacity"></i></a>
+         <p class="w3-medium">Powered by <a href="https://saturdays.ai/" target="_blank" class="w3-hover-text-green">SaturdaysAI</a></p>
+         <!-- End footer -->
+      </footer>
+   </body>
+</html>

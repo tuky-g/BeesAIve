@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+   <title>BeesAIve</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style>
+      body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+      .w3-row-padding img {margin-bottom: 12px}
+      .bgimg {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url({{url_for('static', filename='photos/bee_icon.jpg')}});
+      min-height: 100%;
+      }
+   </style>
+   <body>
+      <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+         <div class="bgimg"></div>
+      </nav>
+      <!-- Page Content -->
+      <div class="w3-main w3-padding-large" style="margin-left:40%">
+         <!-- Header -->
+         <header class="w3-container w3-center" style="padding:50px 16px" id="home">
+            <img class="w3-image" src="{{url_for('static', filename='photos/bee_title.png')}}" style="width:70%" >
+            <p>Saturdays AI project</p>
+         </header>
+         <div class="w3-content w3-justify w3-padding-32 w3-hide-small" style="width:60%">
+            <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+               <h2 class="w3-xlarge">
+                  We are {{ predictions.prob1 }}% sure that your picture is a ....</h1>
+                  <h1 style="text-align: center">
+                  {{ predictions.class1 }} !!!!
+               </h2>
+            </div>
+         </div>
+         <!-- First Photo Grid-->
+         <div class="w3-row-padding">
+            <div class="w3-quarter w3-container w3-margin-bottom w3-center">
+               <img class="w3-hover-opacity" src="{{url_for('static', filename='grad_cam/original_image.png')}}" style="width:80%" >
+               <div class="w3-container w3-white">
+                  <p><b>Original image</b></p>
+               </div>
+            </div>
+            <div class="w3-quarter w3-container w3-margin-bottom w3-center">
+               <img class="w3-hover-opacity" src="{{url_for('static', filename='grad_cam/heatmap_image.png')}}" style="width:80%" >
+               <div class="w3-container w3-white">
+                  <p><b>Heatmap</b></p>
+               </div>
+            </div>
+            <div class="w3-quarter w3-container w3-margin-bottom w3-center">
+               <img class="w3-hover-opacity" src="{{url_for('static', filename='grad_cam/superimposed_image.png')}}" style="width:80%" >
+               <div class="w3-container w3-white">
+                  <p><b>Superimposed </b></p>
+               </div>
+            </div>
+            <div class="w3-quarter w3-container w3-margin-bottom w3-center">
+               <img class="w3-hover-opacity" src="{{url_for('static', filename='grad_cam/rectangle_image.png')}}" style="width:80%" >
+               <div class="w3-container w3-white">
+                  <p><b>Object detected</b></p>
+               </div>
+            </div>
+         </div>
+         <!-- Results section -->
+         <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="results">
+            <h2>Predictions</h2>
+            <p class="w3-wide">{{ predictions.class1 }}</p>
+            <div class="w3-light-grey">
+               <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:{{ predictions.prob1 }}%">{{ predictions.prob1 }}%</div>
+            </div>
+            <p class="w3-wide">{{ predictions.class2 }}</p>
+            <div class="w3-light-grey">
+               <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:{{ predictions.prob2 }}%">{{ predictions.prob2 }}%</div>
+            </div>
+            <p class="w3-wide">{{ predictions.class3 }}</p>
+            <div class="w3-light-grey">
+               <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:{{ predictions.prob3 }}%">{{ predictions.prob3 }}%</div>
+            </div>
+            <p class="w3-wide">{{ predictions.class4 }}</p>
+            <div class="w3-light-grey">
+               <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:{{ predictions.prob4 }}%">{{ predictions.prob4 }}%</div>
+            </div>
+            <br>
+         </div>
+         <div class="w3-content w3-text-grey w3-padding-48 w3-center">
+            <a href="{{ url_for('main_page') }}">
+            <button class="w3-button w3-black w3-padding-large">
+            <i class="fa fa-undo"></i> TRY AGAIN?
+            </button>
+            </a>
+         </div>
+         <!-- Footer -->
+         <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+            <i class="fa fa-medium w3-hover-opacity"></i>
+            <i class="fa fa-github w3-hover-opacity"></i>
+            <p class="w3-medium">Powered by <a href="https://saturdays.ai/" target="_blank" class="w3-hover-text-green">SaturdaysAI</a></p>
+            <!-- End footer -->
+         </footer>
+         <!-- END PAGE CONTENT -->
+      </div>
+   </body>
+</html>
