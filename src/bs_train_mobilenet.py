@@ -11,7 +11,7 @@ import cv2
 import tensorflow as tf
 
 from tensorflow import keras
-from tensorflow.keras.applications.xception import Xception
+from tensorflow.keras.applications.mobilenet import MobileNet
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.layers import Dense, Dropout, Input, GlobalAveragePooling2D
 from tensorflow.keras.models import Model
@@ -57,11 +57,11 @@ train_datagen = ImageDataGenerator(rescale=1. / 255,
                                    horizontal_flip=True,
                                    fill_mode='nearest')
 
-test_datagen = keras.preprocessing.image.ImageDataGenerator(rescale=1./255)
+test_datagen = keras.preprocessing.image.ImageDataGenerator(rescale=1. / 255)
 
 
 train_generator = train_datagen.flow_from_dataframe(train_df,
-                                                    directory=DATASET_PATH,
+                                                    directory=args["dataset"],
                                                     x_col='file_path',
                                                     y_col='label',
                                                     class_mode='categorical',
@@ -70,7 +70,7 @@ train_generator = train_datagen.flow_from_dataframe(train_df,
                                                     batch_size=BATCH_SIZE)
 
 val_generator = test_datagen.flow_from_dataframe(val_df,
-                                                 directory=DATASET_PATH,
+                                                 directory=args["dataset"],
                                                  x_col='file_path',
                                                  y_col='label',
                                                  class_mode='categorical',
