@@ -9,3 +9,4 @@ To download the images from Pixabay we have used the scraper from the article ["
 
 Trained models can be downloaded from the following [link](https://drive.google.com/drive/folders/1BrrobOFMfg_enQLyQI-XeMVydv1Izvcn?usp=sharing).
 
+For more information you can read our article from Medium ["BeesAIve Project: Saving the bees we save us"](https://marta-glez-arias.medium.com/beesaive-project-saving-the-bees-we-save-us-3e8d194ce802).
